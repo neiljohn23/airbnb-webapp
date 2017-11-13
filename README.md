@@ -1,7 +1,7 @@
 # Airbnb Web-App
 
 
-*Simple HTML5 Charts using the canvas element* [chartjs.org](http://www.chartjs.org)
+*Simple tool for visualizing computing against a live Airbnb dataset* [neilj.me/charts.html](http://www.neilj.me/charts.html)
 
 ## Installation
 
