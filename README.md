@@ -1,7 +1,7 @@
 # Airbnb Web-App
 
 
-*Simple web-app for visualizing and computing with live and previously collected Airbnb data* [neilj.me/charts.html](http://www.neilj.me/charts.html)
+*Simple web-app for visualizing and computing with live and previously collected Airbnb data. Live at:* [neilj.me/charts.html](http://www.neilj.me/charts.html)
 
 ## File Descriptions
 
