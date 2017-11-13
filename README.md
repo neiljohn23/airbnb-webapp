@@ -4,7 +4,8 @@
 *Simple web-app for visualizing and computing with live and previously collected Airbnb data. Live at:* [neilj.me/charts.html](http://www.neilj.me/charts.html)
 
 ## File Descriptions
-
+### Live Files
+### Data Migration Files
 
 ## Code References/Libraries Used
   - [Charts.js](http://www.chartjs.org/) to handle visualization of collected data.
