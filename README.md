@@ -7,7 +7,7 @@
 
 
 ## Code References/Libraries Used
-- [BrowserStack](https://browserstack.com) for allowing our team to test on thousands of browsers.
+  - [Charts.js](http://www.chartjs.org/) to handle visualization of collected data.
 
 ## License
 
