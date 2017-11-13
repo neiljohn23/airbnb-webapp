@@ -8,6 +8,7 @@
 
 ## Code References/Libraries Used
   - [Charts.js](http://www.chartjs.org/) to handle visualization of collected data.
+  - [W3Schools](https://www.w3schools.com/) for brushing up on html and css properties and structure.
 
 ## License
 
