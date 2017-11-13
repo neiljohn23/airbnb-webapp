@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<link rel="stylesheet" href="chartsheet.css">
+</head>
+
+<body>
+
+<ul>
+  <li><a href="charts.html">Charts</a></li>
+  <li><a href="estimation.html">Estimation</a></li>
+  <li><a href="optimization.html">Optimization</a></li>
+</ul>
+
+<canvas id="myChart"></canvas>
+<canvas id="myChart2"></canvas>
+<canvas id="myChart3"></canvas>
+<div id="wrapper">
+<input id="clickMe" type="button" value="NEXT" onclick="doFunction();" />
+</div>
+
+<script>
+
+document.getElementById("clickMe").onclick = nextGraph;
+document.getElementById("myChart2").style.display = "none";
+document.getElementById("myChart3").style.display = "none";
+
+
+var xmlhttp = new XMLHttpRequest();
+var url = "typeVPrice.php";
+var graphs = ["myChart", "myChart2", "myChart3"];
+var graphNum = 0;
+var isLoaded = false;
+var isLoaded2 = false;
+
+xmlhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+    var myArr = JSON.parse(this.responseText);
+    myFunction(myArr);
+    }
+};
+
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+
+function myFunction(arr) {
+    console.log(arr);
+    var axis = ["Bed & Breakfast", "Guesthouse", "Townhouse", "Apartment", "House"];
+    var dataSet = new Array();
+
+    for(var i=0;i<axis.length;i++) {
+        dataSet[i] = Math.round(arr[axis[i]]);
+    }
+
+    makeChart(dataSet, 'bar', axis, "myChart");
+
+    makeChart3();
+}
+
+function nextGraph() {
+    var x = document.getElementById(graphs[graphNum]);
+    x.style.display = "none";
+    switch(graphNum) {
+    case 0:
+    	if(!isLoaded) {
+    		makeChart2();
+    		isLoaded = true;
+    	}
+        document.getElementById("myChart2").style.display = "block";
+        graphNum++;
+        break;
+    case 1:
+   	if(!isLoaded2) {
+    		makeChart3();
+    		isLoaded2 = true;
+    	}
+        document.getElementById("myChart3").style.display = "block";
+        graphNum++;
+        break;
+    case 2:
+    	alert("Resetting charts!");
+        document.getElementById("myChart").style.display = "block";
+        graphNum = 0;
+        break;
+    default:
+        alert("Error On Page :(");
+    }
+}
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
